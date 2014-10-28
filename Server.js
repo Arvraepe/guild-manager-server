@@ -5,6 +5,9 @@ var _ = require('underscore');
 var Root = '/api/v0/';
 
 var S = restify.createServer();
+S.use(restify.CORS());
+S.use(restify.fullResponse());
+
 var connection =  mysql.createConnection({
     host: "localhost",
     user: "root",
